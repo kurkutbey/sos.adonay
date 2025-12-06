@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Adonai — فروشگاهی مینیمال (تصاویر داخل HTML)</title>
+  <link rel="stylesheet" href="fat.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="bw-header">
+    <div class="container bw-top">
+      <div class="brand">
+        <div class="logo">ADONAI</div>
+        <div class="muted small">Minimal — Modern — Commerce</div>
+      </div>
+
+      <nav class="main-nav" aria-label="منوی اصلی">
+        <a href="#home">خانه</a>
+        <a href="#shop">فروشگاه</a>
+        <a href="#about">درباره</a>
+        <a href="#contact">تماس</a>
+      </nav>
+
+      <div class="controls">
+        <button id="openCart" class="btn">سبد خرید <span id="cartCount" class="small">0</span></button>
+        <div class="hamburger" id="hamb"><span class="icon"></span><span class="icon"></span><span class="icon"></span></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero: now uses an <img> -->
+  <section class="hero" id="home" role="banner" aria-label="هدر اصلی">
+    <div class="hero-inner container">
+      <div class="hero-text">
+        <h1>ADONAI — قالب فروشگاهی مینیمال</h1>
+        <p>قالب آماده برای فروش — زیبا، سریع و ریسپانسیو</p>
+        <a class="btn ghost" href="#shop">همین حالا ببین</a>
+      </div>
+      <div class="hero-media">
+        <img src="14cedc3546ea5b51c9450029469987b1.jpg" alt="Hero" />
+      </div>
+    </div>
+  </section>
+
+  <main class="container" id="shop" role="main">
+    <section class="products">
+      <h2>پیشنهادی‌ها</h2>
+      <div class="shop-row">
+        <aside class="filters" aria-label="فیلترها">
+          <h4>فیلترها</h4>
+          <label><input type="checkbox" id="favOnly" /> محبوب</label>
+          <label><input type="checkbox" id="newOnly" /> جدید</label>
+          <label>جستجو: <input type="search" id="q" placeholder="نام محصول..." /></label>
+        </aside>
+
+        <div style="flex:1">
+          <div class="grid" id="productGrid"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Brands row (grid of big images like ASOS) -->
+    <section class="brands" aria-label="برندها" style="margin-top:40px">
+      <h2 class="center">برندهای بزرگ</h2>
+      <div class="brand-grid">
+        <figure class="brand-card"><img src="../frosh/2e4a38a1-d8fc-4f9a-8e14-14365643192d.png" alt="Brand 1"><figcaption>ADIDAS</figcaption></figure>
+        <figure class="brand-card"><img src="../frosh/2f4ecda518463716238bf45fca1bcea3.jpg" alt="Brand 2"><figcaption>MANGO</figcaption></figure>
+        <figure class="brand-card"><img src="../frosh/2f4ecda518463716238bf45fca1bcea3.jpg" alt="Brand 3"><figcaption>ASOS</figcaption></figure>
+        <figure class="brand-card"><img src="../frosh/37486313-95b8-420a-9f65-b195e30c0479.png" alt="Brand 4"><figcaption>TOPSHOP</figcaption></figure>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal Product -->
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="productTitle">
+      <div class="left">
+        <div class="gallery"><img id="#" src="frosh/ee508dfd6e1e3e077d36f19cb8664030.jpg" alt="محصول"></div>
+      </div>
+      <div class="right">
+        <h2 id="productTitle">عنوان محصول</h2>
+        <div class="muted" id="productCode">کد: -</div>
+        <p style="margin-top:12px" id="productPrice">$0</p>
+        <p class="small muted" style="margin-top:8px" id="productDesc">توضیحات کوتاه محصول</p>
+
+        <div class="buy-row">
+          <input type="number" id="qty" class="qty" value="1" min="1" />
+          <button class="btn" id="modalAdd">افزودن به سبد</button>
+        </div>
+
+        <div style="margin-top:18px">
+          <button class="btn ghost" id="closeModal">بستن</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Off-canvas Cart -->
+  <aside class="offcart" id="offcart" aria-hidden="true">
+    <div class="panel">
+      <div class="cart-head">
+        <h3>سبد خرید</h3>
+        <button class="btn ghost" id="closeCart">بستن</button>
+      </div>
+
+      <div id="cartItems" class="cart-list"></div>
+
+      <div class="cart-footer">
+        <div class="muted small totals">
+          <div>جمع</div><div id="cartTotal">$0</div>
+        </div>
+        <div class="cart-actions">
+          <button class="btn" id="checkout">پرداخت</button>
+          <button class="btn ghost" id="clearCart">خالی کردن</button>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <footer class="bw-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="logo">ADONAI</div>
+          <div class="small muted">© 2025 Adonai — All Rights Reserved</div>
+        </div>
+        <div class="socials">
+          <div class="small muted">Follow</div>
+          <a class="small muted" href="#">Instagram</a>
+          <a class="small muted" href="#">Telegram</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="fjt.js"></script>
+</body>
+</html>
